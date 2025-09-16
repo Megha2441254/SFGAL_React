@@ -1,0 +1,354 @@
+/* Update your CSS file */
+/* Add to the top of your CSS file */
+
+body {
+  /* Existing styles for font, etc. */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+
+  /* New background gradient and animation */
+  background: linear-gradient(-45deg, #e0e7eb, #d0e7f7, #c0e3eb, #a0d8e8);
+  background-size: 400% 400%;
+  animation: gradient-animation 15s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/* Color Palette Variables */
+:root {
+    --primary-color: #2F4F4F; /* Dark Slate Gray */
+    --secondary-color: #4682B4; /* Steel Blue */
+    --accent-color: #95a842; /* A vibrant blue for links/buttons */
+    --light-bg-color: #E0E7EB; /* Lighter background */
+    --text-color: #333333; /* Dark text */
+    --card-bg-color: white;
+}
+
+/* General Body and Container */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-bg-color);
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    transition: background-color 0.4s ease;
+}
+
+.main-content {
+    text-align: center;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px);
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: var(--secondary-color);
+}
+
+/* Scrolling Text */
+.scrolling-text {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px 0;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.scrolling-text p {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll-left 25s linear infinite;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+@keyframes scroll-left {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Cards Section */
+.cards-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    max-width: 900px;
+    margin-top: 2rem;
+}
+
+.cards-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.card {
+    flex: 1;
+    background-color: var(--card-bg-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card h3 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-top: 0;
+}
+
+.card p {
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+/* About Page Specific Styles */
+.about-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 900px;
+    margin-top: 2rem;
+}
+
+.info-cards-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 100%;
+}
+
+.info-card {
+    flex: 1;
+    background-color: var(--card-bg-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.info-card h3 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-top: 0;
+}
+
+.info-card p {
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+/* Form Styles (Login and Register) */
+.login-page-body {
+  background-color: var(--light-bg-color);
+}
+
+.login-container {
+  width: 400px;
+  max-width: 90%;
+  padding: 2rem;
+  background-color: var(--card-bg-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: left;
+  margin: auto;
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Ensures padding doesn't affect total width */
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--accent-color);
+}
+
+/* Dashboard Pages Styles */
+.dashboard-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+    max-width: 900px;
+    margin: 60px auto;
+    background-color: var(--card-bg-color);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.dashboard-page-container h2 {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+.dashboard-page-container p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 0.8rem;
+}
+.dashboard-page-container span {
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.social-links {
+    margin-bottom: 0.5rem;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Add this to your CSS file for a more abstract background */
+
+body {
+  /* Your existing body styles */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #E0E7EB; /* A single, clean background color */
+  margin: 0;
+  padding: 0;
+  color: #333333;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.main-content {
+  position: relative;
+  z-index: 2; /* Ensures content is on top of the background */
+}
+
+/* Background blob element */
+body::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 500px;
+  height: 500px;
+  background-color: rgba(60, 150, 255, 0.4); /* Semi-transparent blue */
+  border-radius: 50%;
+  filter: blur(150px);
+  animation: blob-move 20s linear infinite;
+  z-index: 1;
+}
+
+@keyframes blob-move {
+  0% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(150px, -100px) scale(1.1); }
+  50% { transform: translate(300px, 150px) scale(0.9); }
+  75% { transform: translate(100px, 200px) scale(1.2); }
+  100% { transform: translate(0, 0) scale(1); }
+}
