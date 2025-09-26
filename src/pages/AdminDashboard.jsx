@@ -1,33 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-
-const AdminDashboard = () => {
-  const [userData, setUserData] = useState(null);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const user = JSON.parse(localStorage.getItem('user'));
-    if (user && user.role === 'admin') {
-      setUserData(user);
+import React, { useState } from 'react';
+import Login from './Login';
+import Dashboard from './Dashboard';
+ 
+function AdminDashboard() {
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
+ 
+  const handleLogin = (username, password) => {
+    // Sample admin credentials
+    if (username === 'admin' && password === 'admin123') {
+      setIsAuthenticated(true);
     } else {
-      navigate('/login');
+      alert('Invalid credentials');
     }
-  }, [navigate]);
-
-  if (!userData) {
-    return null; // or a loading spinner
-  }
-
+  };
+ 
   return (
-    <div className="main-content">
-      <div className="container dashboard-page-container">
-        <h2>Welcome Admin</h2>
-        <p>Logged in as: <span id="user-full-name">{userData.fullName}</span></p>
-        <p>Employee ID: <span id="user-employee-id">{userData.employeeId}</span></p>
-        <p>Manage employee access logs and settings here.</p>
-      </div>
+    <div className='dash'>
+      {isAuthenticated ? <Dashboard /> : <Login onLogin={handleLogin} />}
     </div>
   );
-};
-
+}
+ 
 export default AdminDashboard;
